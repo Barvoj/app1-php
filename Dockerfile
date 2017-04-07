@@ -4,7 +4,7 @@ MAINTAINER Vojtech Bartos <barvoj@seznam.cz>
 # Install modules
 RUN apk update && apk upgrade \
     && apk add zlib-dev \
-    && docker-php-ext-install bcmath mbstring calendar zip
+    && docker-php-ext-install bcmath mbstring calendar zip pdo pdo_mysql
 
 RUN rm /usr/local/etc/php-fpm.d/www.conf
 COPY www.conf /usr/local/etc/php-fpm.d
